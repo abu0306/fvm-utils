@@ -1,4 +1,4 @@
-mod storage;
+pub mod storage;
 mod blockstore;
 mod abort;
 
