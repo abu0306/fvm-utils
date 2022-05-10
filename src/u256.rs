@@ -19,7 +19,9 @@ impl U256 {
     }
 
     pub fn from_dec_str(value: &str) -> Self {
-        U256::from_bytes_be(value.as_bytes())
+        Self {
+            big_uint: BigUint::parse_bytes(("b".to_string() + value).as_bytes(), 10).unwrap()
+        }
     }
 
     pub fn to_bytes_be(&self) -> Vec<u8> {
